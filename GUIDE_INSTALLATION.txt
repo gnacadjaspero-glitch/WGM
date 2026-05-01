@@ -11,7 +11,7 @@ Ce guide vous explique comment mettre en service le système de A à Z.
 - Logiciels (Développement) :
   * Flutter SDK (Version 3.10+) : Pour l'application.
   * Arduino IDE : Pour programmer le boîtier ESP32.
-  * Inno Setup : Pour créer l'installateur Windows (.exe).
+  * Inno Setup 6 : Pour créer l'installateur Windows (.exe).
 
 ---------------------------------------------------------------------------
 2. CONFIGURATION DU BOÎTIER (HARDWARE)
@@ -24,44 +24,49 @@ Ce guide vous explique comment mettre en service le système de A à Z.
    -> Une fois terminé, le boîtier émettra un réseau WiFi nommé "WGM".
 
 ---------------------------------------------------------------------------
-3. CONFIGURATION DE L'APPLICATION (FLUTTER)
+3. AUTOMATISATION VIA 'build_project.bat' (MÉTHODE RAPIDE)
 ---------------------------------------------------------------------------
-1. Ouvrez un terminal dans le dossier racine du projet.
-2. Exécutez 'flutter pub get' pour installer les dépendances.
-3. Pour tester en mode développement :
-   * Exécutez 'flutter run -d windows' (ou connectez un téléphone Android).
-4. Pour compiler la version finale (Release) :
-   * Exécutez 'flutter build windows --release'
+Le fichier 'build_project.bat' à la racine automatise tout le processus :
+
+1. Double-cliquez sur 'build_project.bat'.
+2. Menu des actions :
+   - Option 1 : Générer l'APK Android (pour installation sur mobile/tablette).
+   - Option 2 : Compiler les fichiers Windows Release (requis avant l'installateur).
+   - Option 3 : Créer l'installateur EXE final (utilise Inno Setup automatiquement).
+   - Option 4 : Pub Get (répare les dépendances si le projet ne se lance pas).
+   - Option 5 : Clean (nettoie les fichiers temporaires en cas d'erreur).
 
 ---------------------------------------------------------------------------
-4. CRÉATION DE L'INSTALLATEUR (WINDOWS)
+4. CONFIGURATION MANUELLE (FLUTTER)
 ---------------------------------------------------------------------------
-1. Compilez d'abord la version Release (voir étape 3.4).
-2. Ouvrez le fichier 'winner_setup.iss' avec Inno Setup.
-3. Cliquez sur "Compile" (l'icône de lecture bleue).
-4. Le fichier d'installation final sera généré dans un dossier nommé 'Output'.
+Si vous préférez utiliser la ligne de commande :
+1. Installez les dépendances : 'flutter pub get'
+2. Testez en direct : 'flutter run -d windows'
+3. Compilez pour Windows : 'flutter build windows --release'
+4. Compilez pour Android : 'flutter build apk --release'
 
 ---------------------------------------------------------------------------
 5. MISE EN SERVICE (UTILISATION RÉELLE)
 ---------------------------------------------------------------------------
 1. Alimentez le boîtier ESP32.
-2. Sur votre PC Windows, connectez-vous au réseau WiFi "WGM"
-   (Mot de passe : CheatWinner@360).
+2. Sur votre PC Windows, connectez-vous au réseau WiFi "WGM".
+   (Mot de passe par défaut : CheatWinner@360).
 3. Installez et lancez l'application 'Winner Game Manager'.
 4. Connectez-vous avec vos identifiants (Admin ou Gérant).
-5. L'icône de connexion en haut de l'écran doit être verte pour indiquer
-   que la communication avec le boîtier est active.
-6. Vous pouvez maintenant activer les postes et gérer votre salle.
+5. Vérifiez l'icône de connexion (Haut-Droit) :
+   - VERT : Communication établie avec le boîtier.
+   - ROUGE : Problème de connexion WiFi ou IP (Vérifiez l'IP 192.168.100.1).
+6. Gérez vos postes en toute sécurité.
 
 ---------------------------------------------------------------------------
 6. SÉCURITÉ ET AUDITS
 ---------------------------------------------------------------------------
-- Les logs d'activité sont stockés de manière invisible dans :
+- Logs Furtifs : L'activité est enregistrée dans des dossiers cachés pour
+  éviter toute suppression par les gérants.
   * Windows : %AppData%/Roaming/Audit_Logs/
-  * Android : Dossier caché .wgm_audit
-- La communication entre l'application et le boîtier est sécurisée par
-  une clé unique pour empêcher toute manipulation externe.
+  * Android : Dossier .wgm_audit
+- Sécurité Réseau : Clé de chiffrement unique entre l'App et l'ESP32.
 
 ===========================================================================
-Besoin d'aide ? Consultez 'DOCUMENTATION_SYSTEME.md' pour plus de détails.
+Besoin d'aide supplémentaire ? Lisez 'DOCUMENTATION_SYSTEME.md'.
 ===========================================================================
