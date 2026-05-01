@@ -51,7 +51,8 @@ Si vous préférez utiliser la ligne de commande :
 1. Alimentez le boîtier ESP32.
 2. Sur votre PC Windows, connectez-vous au réseau WiFi "WGM".
    - Mot de passe WiFi : CheatWinner@360
-3. Installez et lancez l'application 'Winner Game Manager'.
+3. Installez l'application via le fichier 'WinnerGameManager_Setup.exe'
+   (disponible à la racine du dépôt pour un accès direct).
 4. Identifiants de connexion :
    - Mot de passe ADMIN : Winner@53539706360
 5. Vérifiez l'icône de connexion (Haut-Droit) :
