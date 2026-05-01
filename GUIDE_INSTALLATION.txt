@@ -1,0 +1,67 @@
+===========================================================================
+      GUIDE D'INSTALLATION ET D'UTILISATION - WINNER GAME MANAGER (WGM)
+===========================================================================
+
+Ce guide vous explique comment mettre en service le système de A à Z.
+
+---------------------------------------------------------------------------
+1. PRÉREQUIS MATÉRIELS ET LOGICIELS
+---------------------------------------------------------------------------
+- Matériel : Un ESP32, des modules Relais (5V), un PC sous Windows.
+- Logiciels (Développement) :
+  * Flutter SDK (Version 3.10+) : Pour l'application.
+  * Arduino IDE : Pour programmer le boîtier ESP32.
+  * Inno Setup : Pour créer l'installateur Windows (.exe).
+
+---------------------------------------------------------------------------
+2. CONFIGURATION DU BOÎTIER (HARDWARE)
+---------------------------------------------------------------------------
+1. Ouvrez le fichier 'hardware/esp32_controller.ino' dans Arduino IDE.
+2. Installez les bibliothèques nécessaires si demandées (WiFi, WebServer).
+3. Connectez votre ESP32 à votre PC via USB.
+4. Dans Arduino IDE, sélectionnez la carte "DOIT ESP32 DEVKIT V1".
+5. Cliquez sur "Téléverser" (Upload).
+   -> Une fois terminé, le boîtier émettra un réseau WiFi nommé "WGM".
+
+---------------------------------------------------------------------------
+3. CONFIGURATION DE L'APPLICATION (FLUTTER)
+---------------------------------------------------------------------------
+1. Ouvrez un terminal dans le dossier racine du projet.
+2. Exécutez 'flutter pub get' pour installer les dépendances.
+3. Pour tester en mode développement :
+   * Exécutez 'flutter run -d windows' (ou connectez un téléphone Android).
+4. Pour compiler la version finale (Release) :
+   * Exécutez 'flutter build windows --release'
+
+---------------------------------------------------------------------------
+4. CRÉATION DE L'INSTALLATEUR (WINDOWS)
+---------------------------------------------------------------------------
+1. Compilez d'abord la version Release (voir étape 3.4).
+2. Ouvrez le fichier 'winner_setup.iss' avec Inno Setup.
+3. Cliquez sur "Compile" (l'icône de lecture bleue).
+4. Le fichier d'installation final sera généré dans un dossier nommé 'Output'.
+
+---------------------------------------------------------------------------
+5. MISE EN SERVICE (UTILISATION RÉELLE)
+---------------------------------------------------------------------------
+1. Alimentez le boîtier ESP32.
+2. Sur votre PC Windows, connectez-vous au réseau WiFi "WGM"
+   (Mot de passe : CheatWinner@360).
+3. Installez et lancez l'application 'Winner Game Manager'.
+4. Connectez-vous avec vos identifiants (Admin ou Gérant).
+5. L'icône de connexion en haut de l'écran doit être verte pour indiquer
+   que la communication avec le boîtier est active.
+6. Vous pouvez maintenant activer les postes et gérer votre salle.
+
+---------------------------------------------------------------------------
+6. SÉCURITÉ ET AUDITS
+---------------------------------------------------------------------------
+- Les logs d'activité sont stockés de manière invisible dans :
+  * Windows : %AppData%/Roaming/Audit_Logs/
+  * Android : Dossier caché .wgm_audit
+- La communication entre l'application et le boîtier est sécurisée par
+  une clé unique pour empêcher toute manipulation externe.
+
+===========================================================================
+Besoin d'aide ? Consultez 'DOCUMENTATION_SYSTEME.md' pour plus de détails.
+===========================================================================
