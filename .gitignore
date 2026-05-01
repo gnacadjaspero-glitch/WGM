@@ -5,7 +5,10 @@
 .packages
 .pub-cache/
 .pub/
-/build/
+build/**
+!build/windows/installer/
+!build/windows/installer/*.exe
+!build/app/outputs/flutter-apk/*.apk
 
 # Android
 android/**/generated/
@@ -28,6 +31,7 @@ ios/Runner/GeneratedPluginRegistrant.m
 windows/flutter/generated_plugin_registrant.cc
 windows/flutter/generated_plugin_registrant.h
 windows/flutter/generated_plugins.cmake
+windows/flutter/ephemeral/
 
 # IDE
 .idea/
@@ -44,6 +48,8 @@ node_modules/
 
 # Binaries
 *.exe
+!/build/windows/installer/*.exe
+!/build/app/outputs/flutter-apk/*.apk
 *.msi
 *.zip
 *.rar
