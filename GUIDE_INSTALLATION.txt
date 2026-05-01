@@ -54,7 +54,7 @@ Si vous préférez utiliser la ligne de commande :
 3. Installez l'application via le fichier 'WinnerGameManager_Setup.exe'
    (disponible à la racine du dépôt pour un accès direct).
 4. Identifiants de connexion :
-   - Mot de passe ADMIN : Winner@53539706360
+   - Mot de passe ADMIN : ******************
 5. Vérifiez l'icône de connexion (Haut-Droit) :
    - VERT : Communication établie avec le boîtier (IP: 192.168.100.1).
    - ROUGE : Problème de connexion WiFi ou IP.
