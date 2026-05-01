@@ -50,12 +50,13 @@ Si vous préférez utiliser la ligne de commande :
 ---------------------------------------------------------------------------
 1. Alimentez le boîtier ESP32.
 2. Sur votre PC Windows, connectez-vous au réseau WiFi "WGM".
-   (Mot de passe par défaut : CheatWinner@360).
+   - Mot de passe WiFi : CheatWinner@360
 3. Installez et lancez l'application 'Winner Game Manager'.
-4. Connectez-vous avec vos identifiants (Admin ou Gérant).
+4. Identifiants de connexion :
+   - Mot de passe ADMIN : Winner@53539706360
 5. Vérifiez l'icône de connexion (Haut-Droit) :
-   - VERT : Communication établie avec le boîtier.
-   - ROUGE : Problème de connexion WiFi ou IP (Vérifiez l'IP 192.168.100.1).
+   - VERT : Communication établie avec le boîtier (IP: 192.168.100.1).
+   - ROUGE : Problème de connexion WiFi ou IP.
 6. Gérez vos postes en toute sécurité.
 
 ---------------------------------------------------------------------------
