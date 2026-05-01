@@ -1,0 +1,50 @@
+name: wgm
+description: "WINNER GAME MANAGER - Logiciel de gestion de salle."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.2.2
+  intl: ^0.20.2
+  http: ^1.1.0
+  network_info_plus: ^6.0.0
+  connectivity_plus: ^6.0.0
+  audioplayers: ^6.6.0
+  file_picker: ^11.0.2
+  pdf: ^3.11.0
+  path_provider: ^2.1.2
+  printing: ^5.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.13.1
+  image: ^4.2.0
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/Logo_Final.png"
+  adaptive_icon_background: "#0B0F13"
+  adaptive_icon_foreground: "assets/images/Logo_Final.png"
+  web:
+    generate: true
+    image_path: "assets/images/Logo_Final.png"
+  windows:
+    generate: true
+    image_path: "assets/images/Logo_Final.png"
+    icon_size: 256
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/sounds/
